@@ -1,0 +1,22 @@
+# I followed the commands below to build a Jenkins server on a server in my home lab. 
+
+# Start by updating the CentOS 8 repositories, which require running the following two commands to update the mirror repositories. 
+# Please note that the commands might not work in the coming months as CentOS 8 is going through changes. 
+sudo sed -i -e "s|mirrorlist=|#mirrorlist=|g" /etc/yum.repos.d/CentOS-*
+sudo sed -i -e "s|#baseurl=http://mirror.centos.org|baseurl=http://vault.centos.org|g" /etc/yum.repos.d/CentOS-*
+
+# Make sure the server, which I usually set to a multiuser.target by default for my home builds, is set to a graphical runlevel. 
+# Jenkins uses a graphical interface, so the server needs to have that graphical mode. 
+dnf set-default graphical
+dnf isolate graphical
+
+# Run the commands below to install Java and complete the Jenkins install.
+dnf install java-1.8.0-openjdk-devel
+wget -P /etc/yum.repos.d/ –O /etc/yum.repos.d/jenkins.repo http://pkg.jenkins-ci.org/redhat-stable/jenkins.repo
+dnf install java-11-openjdk-devel
+wget -P /tmp/ https://get.jenkins.io/war-stable/2.319.2/jenkins.war
+java -jar jenkins.war --httpPort=8080
+
+# Follow instructions. Login with the generated admin password.
+username: ......
+password: ......
