@@ -1,3 +1,3 @@
 # Jenkins
 
-This repository is currently just a collection of commands that I used to build a Jenkins server on CentOS 8. I'd normally just default to what I find in the Jenkins offical documentation, but that didn't work correctly. In the future, I'll annotate this page further so that I can start a Jenkins project I have in mind, which I'll document here. 
+This repository is currently just a collection of commands that I used to build a Jenkins server on CentOS 8. Normally, I'd just follow the instructions here, https://www.jenkins.io/doc/book/installing/, but I had to customize the directions to work for CentOS 8. I'm beginning to have ideas for a blog series about Jenkins, so I'll post code/files from that here as I get started.
